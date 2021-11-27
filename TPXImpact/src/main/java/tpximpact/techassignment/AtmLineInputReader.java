@@ -116,7 +116,7 @@ public class AtmLineInputReader {
 		}	
 	}
 	
-	private boolean serviceCustomerRequest(String[] message) {
+	private void serviceCustomerRequest(String[] message) {
 		try {			
 			if (message[0].equals("B")) {
 				long balance = atm.queryBalance();
@@ -130,7 +130,5 @@ public class AtmLineInputReader {
 		} catch (ATMError err) {
 			output.println(err.getMessage());
 		}
-		
-		return false;	
 	}
 }

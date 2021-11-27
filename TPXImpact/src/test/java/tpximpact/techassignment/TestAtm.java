@@ -64,6 +64,17 @@ public class TestAtm {
 			assertEquals("ATM_ERR",e.getMessage() );
 		}	
 	}
+	
+	@Test
+	public void testATM_withdrawExactATMMoney() throws ATMError  {
+		AtmImpl atm = new AtmImpl();
+		atm.setCashHopper(100);
+		atm.setBalanceOverdraft(576, 123);
+		atm.setAccountAndPin(12345, 1001, 1001);
+			
+		long balance = atm.withdraw(100);
+		assertEquals(476, balance);
+	}
 
 	@Test
 	public void testATM_withdrawATMInsufficientFunds()  {
@@ -93,7 +104,7 @@ public class TestAtm {
 	}
 	
 	@Test
-	public void testATM_getBallanceAfterEndSession() throws ATMError  {
+	public void testATM_getBalanceAfterEndSession() throws ATMError  {
 		AtmImpl atm = new AtmImpl();
 		atm.setCashHopper(500);
 		atm.setBalanceOverdraft(200, 200);

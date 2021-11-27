@@ -7,7 +7,6 @@ public class Launcher {
 
 	public static void main(String[] args) {
 		
-		
 		AtmImpl atm = new AtmImpl();
 		AtmLineInputReader lineInput = new AtmLineInputReader(atm, new InputStreamReader(System.in), new OutputStreamWriter(System.out));
 	

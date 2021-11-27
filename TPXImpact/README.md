@@ -1,4 +1,4 @@
-##TPXImpact - Technical Test.
+## TPXImpact - Technical Test.
 
 ATM simulator.
 
@@ -29,7 +29,7 @@ Atm.jar will also run interactively without specifying an input file:
 	 
 	CTRL-C to exit
 	
-##Approach
+## Approach
 
 From the spec, I noticed that there was two main parts to the system:
  - The actual ATM logic which would handle balances, withdrawals, pin validation.

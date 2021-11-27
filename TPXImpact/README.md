@@ -41,6 +41,11 @@ I decided to structure the code around two classes to do this:
  
 The two are built to be independent/ decoupled from each other.  If, for example a future development required a HTTP REST type interface, Atm.java would
 not need to change.  Just a new ATMRestProcessor to handle the new interface.
+
+Long Intergers have been used to hold the balance.  Though this works great and fits the spec,  integers can not hold fractions. If this was a real ATM I would either make each integer hold a monetary amount in pennies, not pounds (100 = £1) ,  dividing by 100 when the value needs to be shown, and multiplying by 100 when a value is entered.  
+
+
+This, or use BigDecimal. 
  
 **AtmLineInputReader.java**   
 Reads each line and validates it based on the current state of reading line input, one of INIT, WAITING_FOR_CUSTOMER, WAITING_FOR_BALANCE, SERVICE_CUSTOMER_REQUEST.  Once parsed, the information is sent to the Atm in the form of method calls.  Any responses from Atm are appended to the output stream writer.
@@ -52,5 +57,7 @@ Handles the actual business logic of the Atm, keeping track of the customer bala
   - TestATM.java  tests the business logic of AtmImpl.java
   - TestLineInputReader.java tests the logic of the line reader, by ensuring that the processed lines correctly call the correct methods on an Atm mock object.
   - IntegrationTest.java which checks the whole system, by testing that the input provided in the specification, generates the expected output.
+  
+
 
   

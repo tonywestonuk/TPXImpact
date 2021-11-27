@@ -10,7 +10,7 @@ To run, cd to the target directory and then:
 	
 	java -jar atm.jar < input.txt 
 	
-Where input.txt is line input list of commands to send to the atm
+Where input.txt is line input list of commands to send to the atm. There is a copy of input.txt in src/main/resources
 
 Atm.jar will also run interactively without specifying an input file:
 	

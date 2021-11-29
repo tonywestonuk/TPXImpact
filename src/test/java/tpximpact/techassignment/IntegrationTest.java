@@ -31,7 +31,7 @@ public class IntegrationTest {
 			+ "B";
 	
 	@Test
-	public void integrationTest() throws ATMError {
+	public void testIntegrationTest() throws ATMError {
 		
 		AtmImpl atm = new AtmImpl();
 		StringReader rdr = new StringReader(testInput);
